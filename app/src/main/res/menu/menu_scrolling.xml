@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ScrollingActivity">
+    <item
+        android:id="@+id/show_view_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_show_view"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/erase_view_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_erase_view"
+        app:showAsAction="never" />
+</menu>
