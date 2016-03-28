@@ -91,4 +91,9 @@
     </string>
     <string name="menu_show_view">ShowView</string>
     <string name="menu_erase_view">EraseView</string>
+    <string name="menu_font_view">FontView</string>
+    <string name="menu_static_layout_view">StaticLayoutView</string>
+    <string name="menu_mask_filter_view">MaskFillterView</string>
+    <string name="menu_path_effect_view">PathEffectView</string>
+    <string name="menu_ecg_view">ECGView</string>
 </resources>

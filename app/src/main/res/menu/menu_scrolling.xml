@@ -13,4 +13,31 @@
         android:orderInCategory="100"
         android:title="@string/menu_erase_view"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/font_view_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_font_view"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/static_view_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_static_layout_view"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/mask_view_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_mask_filter_view"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/path_view_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_path_effect_view"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/ecg_view_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_ecg_view"
+        app:showAsAction="never" />
 </menu>
