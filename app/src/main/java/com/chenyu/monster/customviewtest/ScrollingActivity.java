@@ -14,6 +14,7 @@ import com.chenyu.monster.customviewtest.activity.ECGViewActivity;
 import com.chenyu.monster.customviewtest.activity.EraseActivity;
 import com.chenyu.monster.customviewtest.activity.FontActivity;
 import com.chenyu.monster.customviewtest.activity.MaskFillterActivity;
+import com.chenyu.monster.customviewtest.activity.MatrixViewActivity;
 import com.chenyu.monster.customviewtest.activity.PathEffectActivity;
 import com.chenyu.monster.customviewtest.activity.ShowViewActivity;
 import com.chenyu.monster.customviewtest.activity.StaticLayoutActivity;
@@ -72,6 +73,9 @@ public class ScrollingActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.ecg_view_activity) {
             pushActivity(ECGViewActivity.class);
+            return true;
+        } else if (id == R.id.matrix_view_activity) {
+            pushActivity(MatrixViewActivity.class);
             return true;
         }
         return super.onOptionsItemSelected(item);
