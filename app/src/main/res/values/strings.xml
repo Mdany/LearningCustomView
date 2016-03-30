@@ -97,4 +97,5 @@
     <string name="menu_path_effect_view">PathEffectView</string>
     <string name="menu_ecg_view">ECGView</string>
     <string name="menu_matrix_view">MatrixView</string>
+    <string name="menu_shader_view">ShaderView</string>
 </resources>

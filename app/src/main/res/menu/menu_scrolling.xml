@@ -45,4 +45,9 @@
         android:orderInCategory="100"
         android:title="@string/menu_matrix_view"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/shader_view_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_shader_view"
+        app:showAsAction="never" />
 </menu>
