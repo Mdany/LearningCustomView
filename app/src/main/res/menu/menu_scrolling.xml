@@ -50,4 +50,9 @@
         android:orderInCategory="100"
         android:title="@string/menu_shader_view"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/view_pager_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_pager_view"
+        app:showAsAction="never" />
 </menu>

@@ -19,6 +19,7 @@ import com.chenyu.monster.customviewtest.activity.PathEffectActivity;
 import com.chenyu.monster.customviewtest.activity.ShaderViewActivity;
 import com.chenyu.monster.customviewtest.activity.ShowViewActivity;
 import com.chenyu.monster.customviewtest.activity.StaticLayoutActivity;
+import com.chenyu.monster.customviewtest.activity.ViewPagerActivity;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -80,6 +81,9 @@ public class ScrollingActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.shader_view_activity) {
             pushActivity(ShaderViewActivity.class);
+            return true;
+        } else if (id == R.id.view_pager_activity) {
+            pushActivity(ViewPagerActivity.class);
             return true;
         }
         return super.onOptionsItemSelected(item);
