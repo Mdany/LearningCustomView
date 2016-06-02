@@ -55,4 +55,14 @@
         android:orderInCategory="100"
         android:title="@string/menu_pager_view"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/bezier_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_bezier_view"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/bezier_evaluator_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_bezier_evaluator_view"
+        app:showAsAction="never" />
 </menu>

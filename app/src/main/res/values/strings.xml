@@ -99,4 +99,6 @@
     <string name="menu_matrix_view">MatrixView</string>
     <string name="menu_shader_view">ShaderView</string>
     <string name="menu_pager_view">ViewPager</string>
+    <string name="menu_bezier_view">Bezier</string>
+    <string name="menu_bezier_evaluator_view">BezierEvaluator</string>
 </resources>

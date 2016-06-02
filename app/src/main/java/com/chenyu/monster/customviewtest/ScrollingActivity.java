@@ -10,12 +10,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.chenyu.monster.customviewtest.activity.BezierActivity;
+import com.chenyu.monster.customviewtest.activity.BezierEvaluatorActivity;
 import com.chenyu.monster.customviewtest.activity.ECGViewActivity;
 import com.chenyu.monster.customviewtest.activity.EraseActivity;
 import com.chenyu.monster.customviewtest.activity.FontActivity;
 import com.chenyu.monster.customviewtest.activity.MaskFillterActivity;
 import com.chenyu.monster.customviewtest.activity.MatrixViewActivity;
 import com.chenyu.monster.customviewtest.activity.PathEffectActivity;
+import com.chenyu.monster.customviewtest.activity.ScrollTextActivty;
 import com.chenyu.monster.customviewtest.activity.ShaderViewActivity;
 import com.chenyu.monster.customviewtest.activity.ShowViewActivity;
 import com.chenyu.monster.customviewtest.activity.StaticLayoutActivity;
@@ -85,6 +88,11 @@ public class ScrollingActivity extends AppCompatActivity {
         } else if (id == R.id.view_pager_activity) {
             pushActivity(ViewPagerActivity.class);
             return true;
+        }else if (id == R.id.bezier_activity){
+            pushActivity(BezierActivity.class);
+            return true;
+        }else if (id==R.id.bezier_evaluator_activity){
+            pushActivity(ScrollTextActivty.class);
         }
         return super.onOptionsItemSelected(item);
     }
