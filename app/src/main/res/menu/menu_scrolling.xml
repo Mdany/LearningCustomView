@@ -1,68 +1,68 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ScrollingActivity">
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context=".ScrollingActivity">
     <item
         android:id="@+id/show_view_activity"
         android:orderInCategory="100"
         android:title="@string/menu_show_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/erase_view_activity"
         android:orderInCategory="100"
         android:title="@string/menu_erase_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/font_view_activity"
         android:orderInCategory="100"
         android:title="@string/menu_font_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
 
     <item
         android:id="@+id/static_view_activity"
         android:orderInCategory="100"
         android:title="@string/menu_static_layout_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/mask_view_activity"
         android:orderInCategory="100"
         android:title="@string/menu_mask_filter_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/path_view_activity"
         android:orderInCategory="100"
         android:title="@string/menu_path_effect_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/ecg_view_activity"
         android:orderInCategory="100"
         android:title="@string/menu_ecg_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/matrix_view_activity"
         android:orderInCategory="100"
         android:title="@string/menu_matrix_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/shader_view_activity"
         android:orderInCategory="100"
         android:title="@string/menu_shader_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/view_pager_activity"
         android:orderInCategory="100"
         android:title="@string/menu_pager_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/bezier_activity"
         android:orderInCategory="100"
         android:title="@string/menu_bezier_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
     <item
         android:id="@+id/bezier_evaluator_activity"
         android:orderInCategory="100"
         android:title="@string/menu_bezier_evaluator_view"
-        app:showAsAction="never" />
+        app:showAsAction="never"/>
 </menu>

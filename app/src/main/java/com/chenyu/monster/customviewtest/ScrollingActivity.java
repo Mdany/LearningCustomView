@@ -23,6 +23,7 @@ import com.chenyu.monster.customviewtest.activity.ShaderViewActivity;
 import com.chenyu.monster.customviewtest.activity.ShowViewActivity;
 import com.chenyu.monster.customviewtest.activity.StaticLayoutActivity;
 import com.chenyu.monster.customviewtest.activity.ViewPagerActivity;
+import com.chenyu.monster.customviewtest.activity.ViewPagerBezierIndicatorActivity;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -88,11 +89,13 @@ public class ScrollingActivity extends AppCompatActivity {
         } else if (id == R.id.view_pager_activity) {
             pushActivity(ViewPagerActivity.class);
             return true;
-        }else if (id == R.id.bezier_activity){
+        } else if (id == R.id.bezier_activity) {
             pushActivity(BezierActivity.class);
             return true;
-        }else if (id==R.id.bezier_evaluator_activity){
-            pushActivity(ScrollTextActivty.class);
+        } else if (id == R.id.bezier_evaluator_activity) {
+//            pushActivity(ScrollTextActivty.class);
+
+            pushActivity(ViewPagerBezierIndicatorActivity.class);
         }
         return super.onOptionsItemSelected(item);
     }
