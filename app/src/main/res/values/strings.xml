@@ -101,4 +101,5 @@
     <string name="menu_pager_view">ViewPager</string>
     <string name="menu_bezier_view">Bezier</string>
     <string name="menu_bezier_evaluator_view">BezierEvaluator</string>
+    <string name="menu_bezier_indicator_view">BezierIndicator</string>
 </resources>

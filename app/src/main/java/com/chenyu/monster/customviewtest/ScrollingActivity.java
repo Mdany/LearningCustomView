@@ -93,8 +93,8 @@ public class ScrollingActivity extends AppCompatActivity {
             pushActivity(BezierActivity.class);
             return true;
         } else if (id == R.id.bezier_evaluator_activity) {
-//            pushActivity(ScrollTextActivty.class);
-
+            pushActivity(ScrollTextActivty.class);
+        }else if (id ==R.id.bezier_indicator_activity){
             pushActivity(ViewPagerBezierIndicatorActivity.class);
         }
         return super.onOptionsItemSelected(item);

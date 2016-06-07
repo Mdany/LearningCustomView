@@ -65,4 +65,9 @@
         android:orderInCategory="100"
         android:title="@string/menu_bezier_evaluator_view"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/bezier_indicator_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_bezier_indicator_view"
+        app:showAsAction="never"/>
 </menu>
