@@ -12,6 +12,7 @@ import android.view.View;
 
 import com.chenyu.monster.customviewtest.activity.BezierActivity;
 import com.chenyu.monster.customviewtest.activity.BezierEvaluatorActivity;
+import com.chenyu.monster.customviewtest.activity.BodyClickActivity;
 import com.chenyu.monster.customviewtest.activity.ECGViewActivity;
 import com.chenyu.monster.customviewtest.activity.EraseActivity;
 import com.chenyu.monster.customviewtest.activity.FontActivity;
@@ -20,6 +21,7 @@ import com.chenyu.monster.customviewtest.activity.MatrixViewActivity;
 import com.chenyu.monster.customviewtest.activity.PathEffectActivity;
 import com.chenyu.monster.customviewtest.activity.ScrollTextActivty;
 import com.chenyu.monster.customviewtest.activity.ShaderViewActivity;
+import com.chenyu.monster.customviewtest.activity.ShapImageActivity;
 import com.chenyu.monster.customviewtest.activity.ShowViewActivity;
 import com.chenyu.monster.customviewtest.activity.StaticLayoutActivity;
 import com.chenyu.monster.customviewtest.activity.ViewPagerActivity;
@@ -94,8 +96,16 @@ public class ScrollingActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.bezier_evaluator_activity) {
             pushActivity(ScrollTextActivty.class);
-        }else if (id ==R.id.bezier_indicator_activity){
+            return true;
+        } else if (id == R.id.bezier_indicator_activity) {
             pushActivity(ViewPagerBezierIndicatorActivity.class);
+            return true;
+        } else if (id == R.id.shape_image_activity) {
+            pushActivity(ShapImageActivity.class);
+            return true;
+        } else if (id == R.id.body_click_activity) {
+            pushActivity(BodyClickActivity.class);
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }

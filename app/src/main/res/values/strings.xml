@@ -102,4 +102,6 @@
     <string name="menu_bezier_view">Bezier</string>
     <string name="menu_bezier_evaluator_view">BezierEvaluator</string>
     <string name="menu_bezier_indicator_view">BezierIndicator</string>
+    <string name="menu_shape_image_view">ShapeImageView</string>
+    <string name="menu_body_click_view">BodyClickView</string>
 </resources>

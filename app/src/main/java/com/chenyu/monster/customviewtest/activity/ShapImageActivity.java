@@ -24,6 +24,7 @@ public class ShapImageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.a_shap_image);
     }
 
     class Task1 extends AsyncTask<Void, Void, Bitmap> {

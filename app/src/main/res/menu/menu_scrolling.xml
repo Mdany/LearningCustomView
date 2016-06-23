@@ -70,4 +70,14 @@
         android:orderInCategory="100"
         android:title="@string/menu_bezier_indicator_view"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/shape_image_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_shape_image_view"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/body_click_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_body_click_view"
+        app:showAsAction="never"/>
 </menu>
