@@ -104,4 +104,5 @@
     <string name="menu_bezier_indicator_view">BezierIndicator</string>
     <string name="menu_shape_image_view">ShapeImageView</string>
     <string name="menu_body_click_view">BodyClickView</string>
+    <string name="menu_hor_fling_view">HorFlingView</string>
 </resources>

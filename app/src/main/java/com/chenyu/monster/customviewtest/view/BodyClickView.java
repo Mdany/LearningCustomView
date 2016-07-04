@@ -136,8 +136,8 @@ public class BodyClickView extends View {
         mMatrix = new Matrix();
         mMidPointF = new PointF();
         mValues = new float[9];
-        maxScale = 4f;
-        minScale = 1f;
+        maxScale = 4.0f;
+        minScale = 1.0f;
         mPadding = getResources().getDimension(R.dimen.margin_large);
         //获取View的高与宽,并将图片放于中间位置
         getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
@@ -188,7 +188,7 @@ public class BodyClickView extends View {
     private void drawPath(Canvas canvas) {
         for (String key : mBodyKeys) {
             float scale = getCurrentScale();
-            Paint paint = new Paint();
+            Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
 //			paint.setColor(Color.BLUE);
             paint.setARGB(80, 68, 173, 161);
             paint.setStyle(Paint.Style.FILL);

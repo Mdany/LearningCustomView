@@ -109,8 +109,10 @@ public class XMLUtils {
                 hNode.areaId = value;
             } else if ("areaTitle".equals(name)) {
                 hNode.areaTitle = value;
-            } else if ("pts".equals(name)) {
-                hNode.setPts(value, ",");
+            } else if ("pts1".equals(name)) {
+                hNode.setPts1(value, ",");
+            } else if ("pts2".equals(name)) {
+                hNode.setPts2(value, ",");
             } else if ("desc".equals(name)) {
                 hNode.desc = value;
             }

@@ -28,9 +28,10 @@ public class BodyArea implements Parcelable {
      */
     public String desc;
     /***
-     * 区域点坐标
+     * 两组区域点坐标,比如胳膊就是两组区域,胸部就是一组区域
      */
-    public int[] pts;
+    public int[] pts1;
+    public int[] pts2;
     public List<BodyArea> areas = new ArrayList<BodyArea>();
 
     public Path path;
@@ -43,7 +44,8 @@ public class BodyArea implements Parcelable {
         areaId = in.readString();
         areaTitle = in.readString();
         desc = in.readString();
-        pts = in.createIntArray();
+        pts1 = in.createIntArray();
+        pts2 = in.createIntArray();
         areas = in.createTypedArrayList(BodyArea.CREATOR);
     }
 
@@ -69,40 +71,71 @@ public class BodyArea implements Parcelable {
         dest.writeString(areaId);
         dest.writeString(areaTitle);
         dest.writeString(desc);
-        dest.writeIntArray(pts);
+        dest.writeIntArray(pts1);
+        dest.writeIntArray(pts2);
         dest.writeTypedList(areas);
     }
 
-    public void setPts(String[] pts) {
-        setStrArrayToIntArray(pts);
+    public void setPts1(String[] pts) {
+        setStrArrayToIntArray1(pts);
     }
 
-    private void setStrArrayToIntArray(String[] pts) {
+    private void setStrArrayToIntArray1(String[] pts) {
         if (null != pts && 0 != pts.length) {
             int len = pts.length;
-            this.pts = new int[len];
+            this.pts1 = new int[len];
             for (int i = 0; i < len; ++i) {
                 try {
-                    this.pts[i] = Integer.parseInt(pts[i]);
+                    this.pts1[i] = Integer.parseInt(pts[i]);
                 } catch (Exception e) {
-                    this.pts[i] = 0;
+                    this.pts1[i] = 0;
                     Log.e("SmartPit", e.getMessage());
                 }
             }
         }
     }
 
-    public void setPts(String pts, String split) {
+    public void setPts1(String pts, String split) {
         if (!TextUtils.isEmpty(pts) && !TextUtils.isEmpty(split)) {
             String[] points = pts.split(split);
-            setPts(points);
+            setPts1(points);
+        }
+    }
+
+    public void setPts2(String[] pts) {
+        setStrArrayToIntArray2(pts);
+    }
+
+    private void setStrArrayToIntArray2(String[] pts) {
+        if (null != pts && 0 != pts.length) {
+            int len = pts.length;
+            this.pts2 = new int[len];
+            for (int i = 0; i < len; ++i) {
+                try {
+                    this.pts2[i] = Integer.parseInt(pts[i]);
+                } catch (Exception e) {
+                    this.pts2[i] = 0;
+                    Log.e("SmartPit", e.getMessage());
+                }
+            }
+        }
+    }
+
+    public void setPts2(String pts, String split) {
+        if (!TextUtils.isEmpty(pts) && !TextUtils.isEmpty(split)) {
+            String[] points = pts.split(split);
+            setPts2(points);
         }
     }
 
     public CheckArea getCheckArea() {
         CheckArea checkArea = null;
-        if (pts != null) {
-            checkArea = new CheckArea(pts);
+        if (pts1 != null) {
+            if (pts2 != null) {
+                checkArea = new CheckArea(pts1, pts2);
+            } else {
+                checkArea = new CheckArea(pts1);
+            }
         }
         return checkArea;
     }
@@ -120,7 +153,19 @@ public class BodyArea implements Parcelable {
             this.path = new Path();
             int len = pts.length;
             isRectF = len == 4;
-            Log.e("TAG", "len================" + len);
+            drawPath(pts);
+        }
+
+        private CheckArea(int[] pts1, int[] pts2) {
+            this.path = new Path();
+            isRectF = false;
+            drawPath(pts1);
+            drawPath(pts2);
+        }
+
+        private void drawPath(int[] pts) {
+            if (this.path == null) return;
+            int len = pts.length;
             for (int i = 0; i < len; ) {
                 if (i == 0) {
                     this.path.moveTo(pts[i++], pts[i++]);

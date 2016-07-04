@@ -36,8 +36,8 @@ public class BodyClickActivity extends AppCompatActivity implements BodyClickVie
         InputStream imgInputStream = null;
         InputStream fileInputStream = null;
         try {
-            imgInputStream = assetManager.open("china.png");
-            fileInputStream = assetManager.open("china.xml");
+            imgInputStream = assetManager.open("male_body.png");
+            fileInputStream = assetManager.open("male.xml");
             mHotView.setImageBitmap(fileInputStream, imgInputStream, BodyClickView.FIT_XY);
             mHotView.setOnClickListener(this);
         } catch (Exception e) {
