@@ -107,7 +107,9 @@ public class XMLUtils {
             String value = n.getNodeValue();
             if ("areaId".equals(name)) {
                 hNode.areaId = value;
-            } else if ("areaTitle".equals(name)) {
+            }else if ("bodyPart".equals(name)){
+                hNode.bodyPart = value;
+            }else if ("areaTitle".equals(name)) {
                 hNode.areaTitle = value;
             } else if ("pts1".equals(name)) {
                 hNode.setPts1(value, ",");

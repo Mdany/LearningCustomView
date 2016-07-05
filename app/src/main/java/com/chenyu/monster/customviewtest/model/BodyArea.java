@@ -20,6 +20,10 @@ public class BodyArea implements Parcelable {
      */
     public String areaId;
     /**
+     * bodyPart
+     */
+    public String bodyPart;
+    /**
      * 区域名称
      */
     public String areaTitle;
