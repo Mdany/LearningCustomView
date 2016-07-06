@@ -76,6 +76,7 @@ public class BodyClickView extends View {
     private static int BIT_HEIGHT = 0;
     /**
      * 按下时间,用于检测点击事件
+     * 间隔时间小于定值则位点击时间，这里没用，w因为我想要手指离开屏幕才会触发热区点击事件
      */
     private long mDownTime;
 
@@ -212,7 +213,7 @@ public class BodyClickView extends View {
                     mPointF.set(x, y);
                 case MotionEvent.ACTION_CANCEL:
                 case MotionEvent.ACTION_UP:
-                    //upToCheckIsClick(event);
+                    upToCheckIsClick(event);
                     break;
                 case MotionEvent.ACTION_MOVE:
                     moveEvent(event);
@@ -229,22 +230,29 @@ public class BodyClickView extends View {
      * @param
      */
     protected void upToCheckIsClick(MotionEvent event) {
-        long curTime = System.currentTimeMillis() - mDownTime;
-        if (curTime < 200) {
-            checkAreas(event);
-            if (!mBodyKeys.isEmpty()) {
-                BodyArea area;
-                for (String key : mBodyKeys) {
-                    area = mBodyAreas.get(key);
-                    mClickListener.OnClick(this, area);
-                    break;
-                }
-            }
-        }
+//        long curTime = System.currentTimeMillis() - mDownTime;
+        checkAreas(event);
+        checkAreaIsClick(event);
+        invalidate();
     }
 
-    protected  void moveEvent(MotionEvent event){
+    /**
+     * 移动事件触发，是否是热区，是热区则drawPath()
+     * 如果想响应热区点击事件，调用checkAreaIsClick()
+     *
+     * @param event
+     */
+    protected void moveEvent(MotionEvent event) {
         checkAreas(event);
+        invalidate();
+    }
+
+    /**
+     * 响应热区点击事件，与checkAreas(MotionEvent event)一起使用
+     *
+     * @param event
+     */
+    private void checkAreaIsClick(MotionEvent event) {
         if (!mBodyKeys.isEmpty()) {
             BodyArea area;
             for (String key : mBodyKeys) {
@@ -253,7 +261,6 @@ public class BodyClickView extends View {
                 break;
             }
         }
-        invalidate();
     }
 
     /**
