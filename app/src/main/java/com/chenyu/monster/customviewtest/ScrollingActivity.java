@@ -11,7 +11,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.chenyu.monster.customviewtest.activity.BezierActivity;
-import com.chenyu.monster.customviewtest.activity.BezierEvaluatorActivity;
 import com.chenyu.monster.customviewtest.activity.BodyClickActivity;
 import com.chenyu.monster.customviewtest.activity.ECGViewActivity;
 import com.chenyu.monster.customviewtest.activity.EraseActivity;
@@ -25,6 +24,7 @@ import com.chenyu.monster.customviewtest.activity.ShaderViewActivity;
 import com.chenyu.monster.customviewtest.activity.ShapImageActivity;
 import com.chenyu.monster.customviewtest.activity.ShowViewActivity;
 import com.chenyu.monster.customviewtest.activity.StaticLayoutActivity;
+import com.chenyu.monster.customviewtest.activity.ViewDragHelperActivity;
 import com.chenyu.monster.customviewtest.activity.ViewPagerActivity;
 import com.chenyu.monster.customviewtest.activity.ViewPagerBezierIndicatorActivity;
 
@@ -109,6 +109,9 @@ public class ScrollingActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.hor_fling_activity) {
             pushActivity(HorizontailFlingActivity.class);
+            return true;
+        }else if (id == R.id.view_drag_activity){
+            pushActivity(ViewDragHelperActivity.class);
             return true;
         }
         return super.onOptionsItemSelected(item);
