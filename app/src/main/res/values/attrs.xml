@@ -11,4 +11,11 @@
         <attr name="stoke_color" format="color|reference"/>
     </declare-styleable>
 
+    <declare-styleable name="PullToRefreshView">
+        <attr name="refreshStyle" format="enum">
+            <enum name="rocket" value="0"/>
+            <enum name="sun" value="1"/>
+        </attr>
+    </declare-styleable>
+
 </resources>

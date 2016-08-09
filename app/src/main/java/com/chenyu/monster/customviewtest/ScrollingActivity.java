@@ -24,7 +24,7 @@ import com.chenyu.monster.customviewtest.activity.ShaderViewActivity;
 import com.chenyu.monster.customviewtest.activity.ShapImageActivity;
 import com.chenyu.monster.customviewtest.activity.ShowViewActivity;
 import com.chenyu.monster.customviewtest.activity.StaticLayoutActivity;
-import com.chenyu.monster.customviewtest.activity.ViewDragHelperActivity;
+import com.chenyu.monster.customviewtest.activity.TencentDrawLayoutActivity;
 import com.chenyu.monster.customviewtest.activity.ViewPagerActivity;
 import com.chenyu.monster.customviewtest.activity.ViewPagerBezierIndicatorActivity;
 
@@ -111,7 +111,7 @@ public class ScrollingActivity extends AppCompatActivity {
             pushActivity(HorizontailFlingActivity.class);
             return true;
         }else if (id == R.id.view_drag_activity){
-            pushActivity(ViewDragHelperActivity.class);
+            pushActivity(TencentDrawLayoutActivity.class);
             return true;
         }
         return super.onOptionsItemSelected(item);

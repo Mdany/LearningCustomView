@@ -1,4 +1,4 @@
-package com.chenyu.monster.customviewtest.view;
+package com.chenyu.monster.customviewtest.view.tencentDrawLayout;
 
 import android.content.Context;
 import android.graphics.Color;

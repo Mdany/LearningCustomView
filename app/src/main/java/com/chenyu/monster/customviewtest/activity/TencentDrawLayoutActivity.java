@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.chenyu.monster.customviewtest.R;
-import com.chenyu.monster.customviewtest.view.CustomDrawerLayout;
+import com.chenyu.monster.customviewtest.view.tencentDrawLayout.CustomDrawerLayout;
 
-public class ViewDragHelperActivity extends AppCompatActivity {
+public class TencentDrawLayoutActivity extends AppCompatActivity {
     private ImageButton mLeftTopBtn;
     private CustomDrawerLayout mTencentContentLayout;
 

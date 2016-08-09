@@ -106,7 +106,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>
         <activity
-            android:name=".activity.ViewDragHelperActivity"
+            android:name=".activity.TencentDrawLayoutActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden"/>
