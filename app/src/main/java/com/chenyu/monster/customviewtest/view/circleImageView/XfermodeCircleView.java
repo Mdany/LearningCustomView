@@ -42,6 +42,7 @@ public class XfermodeCircleView extends ImageView {
 
     private Paint mPaint;
     private WeakReference<Bitmap> mWeakBitmap;
+    private Drawable srcDrawable;
     private Xfermode mXfermode;
     private Bitmap mMaskBitmap;
 
@@ -60,6 +61,7 @@ public class XfermodeCircleView extends ImageView {
                 R.styleable.XfermodeCircleView_radius,
                 (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, DEFAULT_RADIUS,
                         context.getResources().getDisplayMetrics()));
+        srcDrawable = getDrawable();
     }
 
     @Override
@@ -78,15 +80,13 @@ public class XfermodeCircleView extends ImageView {
         Bitmap bitmap = mWeakBitmap == null ? null : mWeakBitmap.get();
 
         if (bitmap == null || bitmap.isRecycled()) {
-            Drawable drawable = getDrawable();
-
-            if (drawable != null) {
+            if (srcDrawable != null) {
                 //获取drawable宽高
-                int dWidth = drawable.getIntrinsicWidth();
-                int dHeight = drawable.getIntrinsicHeight();
+                int dWidth = srcDrawable.getIntrinsicWidth();
+                int dHeight = srcDrawable.getIntrinsicHeight();
                 //创建个bitmap
                 bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
-                float scale = 1.0f;
+                float scale;
                 //创建画布
                 Canvas drawableCanvas = new Canvas(bitmap);
                 if (mType == TYPE_ROUND) {
@@ -95,11 +95,11 @@ public class XfermodeCircleView extends ImageView {
                     scale = getWidth() * 1.0f / Math.min(dWidth, dHeight);
                 }
                 //重新调整drawable绘制区域大小
-                drawable.setBounds(0, 0, (int) (scale * dWidth), (int) (scale * dHeight));
+                srcDrawable.setBounds(0, 0, (int) (scale * dWidth), (int) (scale * dHeight));
                 //重绘的drawable
-                drawable.draw(drawableCanvas);
+                srcDrawable.draw(drawableCanvas);
                 if (mMaskBitmap == null || mMaskBitmap.isRecycled()) {
-                    mMaskBitmap = getBitmap();//获取要绘制的形状
+                    mMaskBitmap = getDstBitmap();//获取要绘制的形状
                 }
                 mPaint.reset();
                 mPaint.setFilterBitmap(false);
@@ -121,7 +121,7 @@ public class XfermodeCircleView extends ImageView {
      *
      * @return
      */
-    private Bitmap getBitmap() {
+    private Bitmap getDstBitmap() {
         Bitmap bitmap = Bitmap.createBitmap(getWidth(), getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(bitmap);
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);

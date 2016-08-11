@@ -9,6 +9,8 @@
         android:layout_width="130dp"
         android:layout_height="130dp"
         android:src="@drawable/task"
-        app:type="circle"/>
+        app:type="round"
+        android:layout_margin="10dp"
+        app:radius="4dp"/>
 
 </LinearLayout>
