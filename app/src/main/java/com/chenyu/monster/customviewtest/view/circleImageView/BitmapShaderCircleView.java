@@ -10,6 +10,8 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.ImageView;
@@ -112,5 +114,30 @@ public class BitmapShaderCircleView extends ImageView {
         Canvas canvas = new Canvas(bitmap);
         drawable.draw(canvas);
         return bitmap;
+    }
+
+    private static final String STATE_INSTANCE = "state_instance";
+    private static final String STATE_TYPE = "state_type";
+    private static final String STATE_RADIUS = "state_radius";
+
+    @Override
+    protected Parcelable onSaveInstanceState() {
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(STATE_INSTANCE, super.onSaveInstanceState());
+        bundle.putInt(STATE_TYPE, mType);
+        bundle.putInt(STATE_RADIUS, mRadius);
+        return bundle;
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Parcelable state) {
+        if (state instanceof Bundle) {
+            Bundle bundle = (Bundle) state;
+            super.onRestoreInstanceState(bundle.getParcelable(STATE_INSTANCE));
+            this.mType = bundle.getInt(STATE_TYPE);
+            this.mRadius = bundle.getInt(STATE_RADIUS);
+        } else {
+            super.onRestoreInstanceState(state);
+        }
     }
 }

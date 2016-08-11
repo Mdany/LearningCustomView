@@ -3,21 +3,29 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+              android:gravity="center"
               android:orientation="vertical">
 
     <com.chenyu.monster.customviewtest.view.circleImageView.XfermodeCircleView
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_margin="10dp"
         android:src="@drawable/task"
+        android:layout_margin="10dp"
         app:type="circle"/>
 
     <com.chenyu.monster.customviewtest.view.circleImageView.BitmapShaderCircleView
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:layout_margin="10dp"
         android:src="@drawable/task"
         app:radius="4dp"
+        android:layout_margin="10dp"
         app:type="round"/>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_margin="10dp"
+        android:scaleType="centerCrop"/>
 
 </LinearLayout>
