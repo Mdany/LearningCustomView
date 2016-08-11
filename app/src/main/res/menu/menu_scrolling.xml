@@ -90,4 +90,9 @@
         android:orderInCategory="100"
         android:title="@string/menu_view_drag_view"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/xfermo_circle_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_view_xfermode_circle"
+        app:showAsAction="never"/>
 </menu>

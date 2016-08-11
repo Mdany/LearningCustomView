@@ -27,6 +27,7 @@ import com.chenyu.monster.customviewtest.activity.StaticLayoutActivity;
 import com.chenyu.monster.customviewtest.activity.TencentDrawLayoutActivity;
 import com.chenyu.monster.customviewtest.activity.ViewPagerActivity;
 import com.chenyu.monster.customviewtest.activity.ViewPagerBezierIndicatorActivity;
+import com.chenyu.monster.customviewtest.activity.XfermodeCircleActivity;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -110,8 +111,11 @@ public class ScrollingActivity extends AppCompatActivity {
         } else if (id == R.id.hor_fling_activity) {
             pushActivity(HorizontailFlingActivity.class);
             return true;
-        }else if (id == R.id.view_drag_activity){
+        } else if (id == R.id.view_drag_activity) {
             pushActivity(TencentDrawLayoutActivity.class);
+            return true;
+        } else if (id == R.id.xfermo_circle_activity) {
+            pushActivity(XfermodeCircleActivity.class);
             return true;
         }
         return super.onOptionsItemSelected(item);

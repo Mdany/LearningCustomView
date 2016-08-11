@@ -18,4 +18,12 @@
         </attr>
     </declare-styleable>
 
+    <declare-styleable name="XfermodeCircleView">
+        <attr name="radius" format="dimension"/>
+        <attr name="type" format="enum">
+            <enum name="circle" value="0"/>
+            <enum name="round" value="1"/>
+        </attr>
+    </declare-styleable>
+
 </resources>
