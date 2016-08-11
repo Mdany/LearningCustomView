@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
     <com.chenyu.monster.customviewtest.view.circleImageView.XfermodeCircleView
         android:layout_width="130dp"
         android:layout_height="130dp"
-        android:src="@drawable/task"
-        app:type="round"
         android:layout_margin="10dp"
-        app:radius="4dp"/>
+        android:src="@drawable/task"
+        app:type="circle"/>
+
+    <com.chenyu.monster.customviewtest.view.circleImageView.BitmapShaderCircleView
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/task"
+        app:radius="4dp"
+        app:type="round"/>
 
 </LinearLayout>
