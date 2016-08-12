@@ -17,12 +17,12 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.a_show);
         initView();
         viewDidLoad();
     }
 
     protected void initView(){
+        setContentView(R.layout.a_show);
         container = (LinearLayout) findViewById(R.id.container);
     }
 
