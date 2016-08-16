@@ -2,7 +2,6 @@ package com.chenyu.monster.customviewtest.fragment;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,10 +10,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import com.chenyu.monster.customviewtest.R;
 import com.chenyu.monster.customviewtest.utils.RenderScripBlurHelper;
-import com.chenyu.monster.customviewtest.view.BlurLinearLayout;
+import com.chenyu.monster.customviewtest.view.BlurImageView;
 
 /**
  * Created by chenyu on 16/8/12.
@@ -22,7 +22,8 @@ import com.chenyu.monster.customviewtest.view.BlurLinearLayout;
 public class RenderScripBlurFragment extends Fragment {
     private Activity mActivity;
     private Bitmap bitmap;
-    private BlurLinearLayout container;
+    private FrameLayout container;
+    private BlurImageView back;
 
     private long start;
     private long end;
@@ -30,20 +31,23 @@ public class RenderScripBlurFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        new BlurAsyncTask().execute();
         return inflater.inflate(R.layout.f_render_scrip, container, false);
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        container = (BlurLinearLayout) view.findViewById(R.id.ll_layout);
+        container = (FrameLayout) view.findViewById(R.id.ll_layout);
+        container.addView(back, 0);
     }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mActivity = getActivity();
+        back = (BlurImageView) View.inflate(mActivity, R.layout.f_render_scripe_back, null);
+        mActivity.getWindow().getDecorView().setDrawingCacheEnabled(true);
+        back.setImageBitmap(mActivity.getWindow().getDecorView().getDrawingCache());
     }
 
     private class BlurAsyncTask extends AsyncTask<Void, Void, Bitmap> {
@@ -51,8 +55,7 @@ public class RenderScripBlurFragment extends Fragment {
         protected void onPreExecute() {
             start = System.currentTimeMillis();
             Log.i("fragment", "" + start);
-            mActivity.getWindow().getDecorView().setDrawingCacheEnabled(true);
-            bitmap = mActivity.getWindow().getDecorView().getDrawingCache();
+
         }
 
         @Override
@@ -64,7 +67,7 @@ public class RenderScripBlurFragment extends Fragment {
 
         @Override
         protected void onPostExecute(Bitmap bitmap) {
-            container.setBackground(new BitmapDrawable(getResources(), bitmap));
+            back.setImageBitmap(bitmap);
             end = System.currentTimeMillis();
             Log.i("fragment", (end - start) + "");
         }
