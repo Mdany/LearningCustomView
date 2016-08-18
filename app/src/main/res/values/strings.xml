@@ -108,4 +108,5 @@
     <string name="menu_view_drag_view">ViewDragView</string>
     <string name="menu_view_xfermode_circle">XfermodeCircleView</string>
     <string name="menu_view_render_scrip">RenderScripView</string>
+    <string name="menu_view_path_measure">PathMeasureView</string>
 </resources>

@@ -100,4 +100,9 @@
         android:orderInCategory="100"
         android:title="@string/menu_view_render_scrip"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/path_measure_activity"
+        android:orderInCategory="100"
+        android:title="@string/menu_view_path_measure"
+        app:showAsAction="never"/>
 </menu>
