@@ -33,5 +33,16 @@
             <!--<enum name="round" value="1"/>-->
         <!--</attr>-->
     <!--</declare-styleable>-->
+    
+    <declare-styleable name="FloatingActionMenu">
+        <attr name="addText" format="string"/>
+        <attr name="addIcon" format="reference"/>
+        <attr name="pressDrawable" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="FloatingActionButton">
+        <attr name="title" format="string"/>
+        <attr name="icon" format="reference"/>
+    </declare-styleable>
 
 </resources>

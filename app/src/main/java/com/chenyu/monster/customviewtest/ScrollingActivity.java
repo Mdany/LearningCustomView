@@ -13,6 +13,7 @@ import android.view.View;
 import com.chenyu.monster.customviewtest.activity.BezierActivity;
 import com.chenyu.monster.customviewtest.activity.ECGViewActivity;
 import com.chenyu.monster.customviewtest.activity.EraseActivity;
+import com.chenyu.monster.customviewtest.activity.FloatingActivity;
 import com.chenyu.monster.customviewtest.activity.FontActivity;
 import com.chenyu.monster.customviewtest.activity.HorizontailFlingActivity;
 import com.chenyu.monster.customviewtest.activity.MaskFillterActivity;
@@ -45,6 +46,8 @@ public class ScrollingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                pushActivity(FloatingActivity.class);
             }
         });
     }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.chenyu.monster.customviewtest.view.FloatingActionMenu
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        app:pressDrawable="@drawable/floating_action_menu"
+        app:addText="就诊\n人群">
+
+        <com.chenyu.monster.customviewtest.view.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/male"
+            app:title="男性"/>
+
+        <com.chenyu.monster.customviewtest.view.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/female"
+            app:title="女性"/>
+
+        <com.chenyu.monster.customviewtest.view.FloatingActionButton
+            android:id="@+id/fab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/child"
+            app:title="儿童"/>
+
+    </com.chenyu.monster.customviewtest.view.FloatingActionMenu>
+
+    <TextView
+        android:id="@+id/cs_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""/>
+
+</FrameLayout>
