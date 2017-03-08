@@ -2,6 +2,7 @@ package com.chenyu.monster.customviewtest;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -13,7 +14,6 @@ import android.view.View;
 import com.chenyu.monster.customviewtest.activity.BezierActivity;
 import com.chenyu.monster.customviewtest.activity.ECGViewActivity;
 import com.chenyu.monster.customviewtest.activity.EraseActivity;
-import com.chenyu.monster.customviewtest.activity.FloatingActivity;
 import com.chenyu.monster.customviewtest.activity.FontActivity;
 import com.chenyu.monster.customviewtest.activity.HorizontailFlingActivity;
 import com.chenyu.monster.customviewtest.activity.MaskFillterActivity;
@@ -30,6 +30,7 @@ import com.chenyu.monster.customviewtest.activity.TencentDrawLayoutActivity;
 import com.chenyu.monster.customviewtest.activity.ViewPagerActivity;
 import com.chenyu.monster.customviewtest.activity.ViewPagerBezierIndicatorActivity;
 import com.chenyu.monster.customviewtest.activity.XfermodeCircleActivity;
+import com.chenyu.monster.customviewtest.utils.PermissionUtils;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -47,7 +48,7 @@ public class ScrollingActivity extends AppCompatActivity {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
-                pushActivity(FloatingActivity.class);
+                PermissionUtils.checkPermission(ScrollingActivity.this);
             }
         });
     }
@@ -131,5 +132,10 @@ public class ScrollingActivity extends AppCompatActivity {
     private void pushActivity(Class clazz) {
         Intent intent = new Intent(this, clazz);
         startActivity(intent);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }
